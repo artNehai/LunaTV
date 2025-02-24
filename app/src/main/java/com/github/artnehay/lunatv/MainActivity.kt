@@ -9,9 +9,9 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.tv.material3.Surface
 import com.github.artnehay.lunatv.presentation.LunaTVApp
 import com.github.artnehay.lunatv.presentation.theme.LunaTVTheme
-import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-@EntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
