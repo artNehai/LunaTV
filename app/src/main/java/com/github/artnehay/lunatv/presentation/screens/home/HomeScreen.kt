@@ -10,11 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.github.artnehay.lunatv.domain.model.Movie
 import com.github.artnehay.lunatv.presentation.common.MovieRow
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    viewModel: HomeScreenViewModel = hiltViewModel(),
+) {
     val lazyListState = rememberLazyListState()
     val height = LocalConfiguration.current.screenHeightDp / 3f
 
