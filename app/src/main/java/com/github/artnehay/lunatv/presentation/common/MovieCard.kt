@@ -42,7 +42,8 @@ fun MovieCard(
                 contentScale = ContentScale.Crop,
             )
         },
-        title = {
+        title = {},
+        subtitle = {
             Text(
                 text = movie.name,
                 style = MaterialTheme.typography.bodyMedium.copy(

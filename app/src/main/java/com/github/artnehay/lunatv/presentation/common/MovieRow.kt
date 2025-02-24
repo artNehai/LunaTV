@@ -4,8 +4,11 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.runtime.Composable
@@ -33,10 +36,13 @@ fun MovieRow(
     val (lazyRow, firstItem) = remember { FocusRequester.createRefs() }
 
     Column(
-        modifier = modifier.focusGroup()
+        modifier = modifier
+            .fillMaxWidth()
+            .focusGroup()
     ) {
         Text(
             text = title,
+            modifier = Modifier.padding(start = 16.dp),
             style = MaterialTheme.typography.headlineLarge.copy(
                 fontWeight = FontWeight.Medium,
                 fontSize = 30.sp
@@ -49,12 +55,16 @@ fun MovieRow(
             targetState = movieList,
         ) { movieState ->
             LazyRow(
-                horizontalArrangement = Arrangement.spacedBy(20.dp),
                 modifier = Modifier
                     .focusRequester(lazyRow)
                     .focusRestorer {
                         firstItem
-                    }
+                    },
+                contentPadding = PaddingValues(
+                    start = 16.dp,
+                    end = 16.dp,
+                ),
+                horizontalArrangement = Arrangement.spacedBy(20.dp)
             ) {
                 itemsIndexed(movieState, key = { _, movie -> movie.id }) { index, movie ->
                     val itemModifier = if (index == 0) {
