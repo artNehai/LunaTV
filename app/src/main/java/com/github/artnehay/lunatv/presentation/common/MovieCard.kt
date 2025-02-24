@@ -33,13 +33,13 @@ fun MovieCard(
         onClick = onClick,
         image = {
             AsyncImage(
-                modifier = modifier.aspectRatio(16f / 9f),
+                modifier = Modifier.aspectRatio(16f / 9f),
                 model = ImageRequest.Builder(LocalContext.current)
                     .crossfade(true)
                     .data(movie.posterUri)
                     .build(),
                 contentDescription = null,
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop,
             )
         },
         title = {
@@ -57,7 +57,7 @@ fun MovieCard(
             )
         },
         modifier = modifier,
-        scale = CardDefaults.scale(focusedScale = 1.3f),
+        scale = CardDefaults.scale(focusedScale = 1.1f),
         border = CardDefaults.border(
             focusedBorder = Border(
                 border = BorderStroke(
