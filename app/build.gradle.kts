@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.androidx.tv.material)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
 
     debugImplementation(libs.androidx.ui.tooling)
 //    androidTestImplementation(platform(libs.androidx.compose.bom))

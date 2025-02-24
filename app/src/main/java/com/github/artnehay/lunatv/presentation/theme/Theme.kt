@@ -1,4 +1,4 @@
-package com.github.artnehay.lunatv.ui.theme
+package com.github.artnehay.lunatv.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
