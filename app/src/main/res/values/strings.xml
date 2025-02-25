@@ -5,4 +5,7 @@
     <string name="section_popular_tomorrow">Popular tomorrow</string>
     <string name="section_popular_today">Popular today</string>
     <string name="section_popular_yesterday">Popular yesterday</string>
+
+    <!--Movie detail screen-->
+    <string name="watch_trailer">Watch trailer</string>
 </resources>

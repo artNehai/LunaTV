@@ -20,9 +20,9 @@ fun HomeScreen(
     viewModel: HomeScreenViewModel = hiltViewModel(),
 ) {
     val lazyListState = rememberLazyListState()
-    val height = LocalConfiguration.current.screenHeightDp / 3f
-
+    val rowHeight = LocalConfiguration.current.screenHeightDp / 3f
     val sections = viewModel.homeSections.collectAsStateWithLifecycle()
+
     LazyColumn(
         state = lazyListState,
         contentPadding = PaddingValues(bottom = 108.dp),
@@ -36,7 +36,7 @@ fun HomeScreen(
                     onMovieSelected = {},
                     modifier = Modifier
                         .padding(start = 16.dp, top = 32.dp)
-                        .height(height.dp),
+                        .height(rowHeight.dp),
                 )
             }
         }
