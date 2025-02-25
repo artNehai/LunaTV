@@ -1,21 +1,19 @@
 package com.github.artnehay.lunatv.presentation.screens.moviedetail
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.github.artnehay.lunatv.domain.model.HomeSection
-import com.github.artnehay.lunatv.domain.repository.MovieRepository
+import androidx.navigation.toRoute
+import com.github.artnehay.lunatv.navigation.Screens
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MovieDetailViewModel @Inject constructor(
+    private val savedStateHandle: SavedStateHandle,
 //    val movieRepository: MovieRepository,
 ) : ViewModel() {
+
+    private val _movieId = savedStateHandle.toRoute<Screens.MovieDetail>().movieId
 
     /*private val _homeSections = MutableStateFlow(listOf<HomeSection>())
     val homeSections = _homeSections.asStateFlow()

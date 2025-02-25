@@ -39,7 +39,7 @@ fun MovieDetailScreen() {
         modifier = Modifier.fillMaxSize(),
     ) {
         AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current).data("")
+            model = ImageRequest.Builder(LocalContext.current).data("https://www.vintagemovieposters.co.uk/wp-content/uploads/2018/12/IMG_3109-1024x678.jpeg")
                 .crossfade(true).build(),
             contentDescription = null,
             contentScale = ContentScale.Crop,

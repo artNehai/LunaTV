@@ -17,6 +17,7 @@ import com.github.artnehay.lunatv.presentation.common.MovieRow
 
 @Composable
 fun HomeScreen(
+    onMovieSelected: (String) -> Unit,
     viewModel: HomeScreenViewModel = hiltViewModel(),
 ) {
     val lazyListState = rememberLazyListState()
@@ -33,7 +34,7 @@ fun HomeScreen(
                 MovieRow(
                     movieList = section.movies,
                     title = stringResource(section.section.titleId),
-                    onMovieSelected = {},
+                    onMovieSelected = { onMovieSelected(it.id) },
                     modifier = Modifier
                         .padding(start = 16.dp, top = 32.dp)
                         .height(rowHeight.dp),

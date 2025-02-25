@@ -3,6 +3,7 @@ package com.github.artnehay.lunatv.presentation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.material.icons.Icons
@@ -16,7 +17,7 @@ import androidx.tv.material3.Icon
 import androidx.tv.material3.NavigationDrawer
 import androidx.tv.material3.NavigationDrawerItem
 import androidx.tv.material3.Text
-import com.github.artnehay.lunatv.presentation.screens.home.HomeScreen
+import com.github.artnehay.lunatv.navigation.LunaTVNavHost
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -49,6 +50,8 @@ fun LunaTVApp() {
             }
         }
     ) {
-        HomeScreen()
+        LunaTVNavHost(
+            modifier = Modifier.fillMaxSize(),
+        )
     }
 }
