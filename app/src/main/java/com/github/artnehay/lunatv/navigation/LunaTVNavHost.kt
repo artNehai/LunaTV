@@ -2,31 +2,31 @@ package com.github.artnehay.lunatv.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.github.artnehay.lunatv.presentation.screens.home.HomeScreen
 import com.github.artnehay.lunatv.presentation.screens.moviedetail.MovieDetailScreen
 
 @Composable
 fun LunaTVNavHost(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
 ) {
-    val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Screens.Home,
+        startDestination = Screen.Home,
         modifier = modifier,
     ) {
-        composable<Screens.Home> {
+        composable<Screen.Home> {
             HomeScreen(
                 onMovieSelected = { id ->
-                    navController.navigate(Screens.MovieDetail(id))
+                    navController.navigate(Screen.MovieDetail(id))
                 }
             )
         }
 
-        composable<Screens.MovieDetail> {
+        composable<Screen.MovieDetail> {
             MovieDetailScreen()
         }
     }

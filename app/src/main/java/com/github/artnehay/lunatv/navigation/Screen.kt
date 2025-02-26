@@ -2,10 +2,11 @@ package com.github.artnehay.lunatv.navigation
 
 import kotlinx.serialization.Serializable
 
-sealed class Screens {
+@Serializable
+sealed class Screen {
     @Serializable
-    data object Home : Screens()
+    data object Home : Screen()
 
     @Serializable
-    class MovieDetail(val movieId: String) : Screens()
+    class MovieDetail(val movieId: String) : Screen()
 }

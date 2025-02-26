@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">LunaTV</string>
 
+    <!--Navigation-->
+    <string name="home_nav_label">Home</string>
+
     <!--Home screen-->
     <string name="section_popular_tomorrow">Popular tomorrow</string>
     <string name="section_popular_today">Popular today</string>
